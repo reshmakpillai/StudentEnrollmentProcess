@@ -1,11 +1,11 @@
-const formOpenBtn = document.querySelector("#form-open"),
+//const formOpenBtn = document.querySelector("#form-open"),
   home = document.querySelector(".home"),
   formContainer = document.querySelector(".form_container"),
   signupBtn = document.querySelector("#signup"),
   loginBtn = document.querySelector("#login"),
   pwShowHide = document.querySelectorAll(".pw_hide");
 
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
+//formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 
 pwShowHide.forEach((icon) => {
   icon.addEventListener("click", () => {

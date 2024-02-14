@@ -44,5 +44,7 @@ if(checkoutBtn){
   checkoutBtn.addEventListener("click", (e) => {
     courseForm.classList.add("d-none");
     checkoutForm.classList.remove("d-none");
-  });
+      } );   
 }
+
+

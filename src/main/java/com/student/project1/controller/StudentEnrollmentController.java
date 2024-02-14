@@ -1,14 +1,18 @@
 package com.student.project1.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.student.project1.model.Student;
+import com.student.project1.model.Program;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -56,10 +60,17 @@ public class StudentEnrollmentController {
             model.addAttribute("username", username);
             session.setAttribute("studentId", student.getStudid()); 
             System.out.println(username);
-            return "redirect:/index";
+            return "redirect:/checkout";
         }
 		return password; 
-       }
+     }
+  
+    @RequestMapping("/checkout")
+    public String checkout(Model model)
+    {
+    	model.addAttribute("programs", programRepo.findAll());
+    	return "checkout";
+    }
     
     
 	

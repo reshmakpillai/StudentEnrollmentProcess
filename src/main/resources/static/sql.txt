@@ -11,3 +11,12 @@ CREATE TABLE `student` (
     `password` varchar(20) DEFAULT NULL,
    PRIMARY KEY (`studentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `program` (
+   `programcode` varchar(5)  NOT NULL,
+   `programname` varchar(255) DEFAULT NULL,
+   `duration` int(20) DEFAULT NULL,
+   `fee` double DEFAULT NULL,
+   PRIMARY KEY (`programcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

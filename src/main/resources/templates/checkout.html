@@ -20,11 +20,15 @@
                     <h2>Select course</h2>
                     <div class="row">
                         <div class="col-12">
-                          <select id="programDropdown" class="form-control" name="programDropdown" required>
-								<option value="">Select course</option>
-            					<option th:each="program : ${programs}" th:value="${program.programcode}" th:text="${program.programname}"></option>
-        				 </select>
+							<select id="programDropdown" class="form-control" name="programDropdown" onChange="updateFee()" required>
+							    <option value="">Select course</option>
+							    <option th:each="program : ${programs}" th:value="${program.programcode}" th:data-fee="${program.fee}" th:data-duration="${program.duration}" th:text="${program.programname}"></option>
+							</select>
                         </div>
+                        <div class="row col-12 mt-2" id="details">
+							<h6 id="course-fee">Due amount: $<span id="fee-amount1">0</span></h6>
+                        	<h6 id="course-duration">Years: <span id="duration">0</span> years</h6>
+						</div>
                         <button type="button" class="button" id="checkout-btn">Proceed to checkout</button>
                     </div>
                 </form>
@@ -34,11 +38,7 @@
             <div class="form checkout_form d-none" id="checkout-form">
                 <form action="payment" method="POST">
                     <h2>Checkout</h2>
-                            <!-- Display selected course fee dynamically -->
-        <div class="text-end mt-4">
-            <h6 id="course-fee">Due amount: $<span id="fee-amount">0</span></h6>
-        </div>
-                    <div class="row">
+			        <div class="row">
                         <div class="col-12">
                             <div class="input_box">
                                 <input type="text" placeholder="Card number" name="" required />
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="text-end mt-4">
-                        <h6>Due amount: $100</h6>
+                        <h6 id="course-fee">Due amount: $<span id="fee-amount">0</span></h6>
                     </div>
                     <button class="button" id="pay-btn">Pay</button>
                 </form>

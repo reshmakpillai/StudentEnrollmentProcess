@@ -1,9 +1,15 @@
 //const formOpenBtn = document.querySelector("#form-open"),
-  home = document.querySelector(".home"),
-  formContainer = document.querySelector(".form_container"),
-  signupBtn = document.querySelector("#signup"),
-  loginBtn = document.querySelector("#login"),
-  pwShowHide = document.querySelectorAll(".pw_hide");
+home = document.querySelector(".home"),
+formContainer = document.querySelector(".form_container"),
+signupBtn = document.querySelector("#signup"),
+loginBtn = document.querySelector("#login"),
+pwShowHide = document.querySelectorAll(".pw_hide"),
+
+checkoutBtn = document.querySelector("#checkout-btn"),
+courseForm = document.querySelector("#course-form"),
+checkoutForm = document.querySelector("#checkout-form")
+
+
 
 //formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 
@@ -20,11 +26,23 @@ pwShowHide.forEach((icon) => {
   });
 });
 
-signupBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.add("active");
-});
-loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.remove("active");
-});
+if(signupBtn){
+  signupBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    formContainer.classList.add("active");
+  });
+}
+
+if(loginBtn){
+  loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    formContainer.classList.remove("active");
+  });
+}
+
+if(checkoutBtn){
+  checkoutBtn.addEventListener("click", (e) => {
+    courseForm.classList.add("d-none");
+    checkoutForm.classList.remove("d-none");
+  });
+}

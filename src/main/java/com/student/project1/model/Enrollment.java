@@ -25,28 +25,26 @@ public class Enrollment {
 	@JoinColumn(name="programcode")
 	private Program program;
 	
-	@Column(name="startdate")
-	private LocalDate startdate;
+	@Column(name="paymentdate")
+	private LocalDate paymentdate;
 	
 	@Column(name="amountpaid")
     private double amountPaid;
 	
 	@Column(name="status")
-    private String status;
+    private int status;
 	
 	
 	public Enrollment() {
 		
 	}
-	
 
-	public Enrollment(int applicationno, Student student, Program program, LocalDate startdate, double amountPaid,
-			String status) {
+
+	public Enrollment(Student student, Program program, LocalDate paymentdate, double amountPaid, int status) {
 		super();
-		this.applicationno = applicationno;
 		this.student = student;
 		this.program = program;
-		this.startdate = startdate;
+		this.paymentdate = paymentdate;
 		this.amountPaid = amountPaid;
 		this.status = status;
 	}
@@ -77,13 +75,13 @@ public class Enrollment {
 		this.program = program;
 	}
 
-	public LocalDate getStartdate() {
-		return startdate;
+	public LocalDate getpaymentdate() {
+		return paymentdate;
 	}
 
 
-	public void setStartdate(LocalDate startdate) {
-		this.startdate = startdate;
+	public LocalDate setpaymentdate(LocalDate paymentdate) {
+		return this.paymentdate = paymentdate;
 	}
 
 
@@ -97,12 +95,12 @@ public class Enrollment {
 	}
 
 
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 	

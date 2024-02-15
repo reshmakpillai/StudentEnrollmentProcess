@@ -20,3 +20,14 @@ CREATE TABLE `program` (
    `fee` double DEFAULT NULL,
    PRIMARY KEY (`programcode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `enrollment` (
+   `applicationno` int(5) AUTO_INCREMENT NOT NULL,
+	`studentid` int(5)  NOT NULL,
+   `programcode` varchar(5)  NOT NULL,
+   `paymentdate` date DEFAULT NULL,
+   `amountpaid` double DEFAULT NULL,
+	`status` int(2) DEFAULT NULL,
+   PRIMARY KEY (`applicationno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
